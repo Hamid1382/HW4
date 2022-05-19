@@ -1,0 +1,22 @@
+﻿<Window x:Class="GUI.Load"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:GUI"
+		mc:Ignorable="d"
+		Title="Load" Height="81" Width="428">
+	<StackPanel Orientation="Vertical">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Label Content="Load File: " Grid.Column="0"/>
+			<TextBox Text="C:\1.json" VerticalAlignment="Center"  Grid.Column="1"/>
+			<Button Content="Browse" Name="Browse_Load" Grid.Column="2" Margin="5"/>
+		</Grid>
+		<Button Content="Load" Name="Load_Load" Margin="5"/>
+	</StackPanel>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="GUI.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:GUI"
+		mc:Ignorable="d"
+		Title="Hamid's Great Shop" Height="450" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition MaxHeight="25"/>
+			<RowDefinition MaxHeight="25"/>
+			<RowDefinition MaxHeight="30"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Menu Grid.Row="0">
+			<MenuItem Header="System">
+				<MenuItem Header="Save Session" Click="Save_Session_Click"/>
+				<MenuItem Header="Load Session" Click="Load_Session_Click"/>
+				<MenuItem Header="New Session" Click="New_Session_Click"/>
+				<MenuItem Header="Reload Session" Click="Reload_Session_Click"/>
+			</MenuItem>
+			<MenuItem Header="Person">
+				<MenuItem Header="Sign In" Click="Sign_In_Click"/>
+				<MenuItem Header="Log in" Click="Login_Click"/>
+				<MenuItem Header="Log out" IsEnabled="True" Click="Log_Out_Click"/>
+				<MenuItem Header="View People" IsEnabled="False"/>
+			</MenuItem>
+			<MenuItem Header="Goods">
+				<MenuItem Header="Add" IsEnabled="True" Click="Add_Goods_click"/>
+				<MenuItem Header="Edit or remove" IsEnabled="False"/>
+			</MenuItem>
+		</Menu>
+		<TextBlock Text="Guess,   Sign in/login for more stuff!" Grid.Row="1" Padding="0 3 0 0"/>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="4*"/>
+			</Grid.ColumnDefinitions>
+			<Label Content="Show: " Grid.Column="0" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox IsChecked="True" Content="Show All" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox IsChecked="True" Content="show CPUs" Grid.Column="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox IsChecked="True" Content="show GPUs" Grid.Column="3" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox IsChecked="True" Content="show Motherboards" Grid.Column="4" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox IsChecked="True" Content="show Rams" Grid.Column="5" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+		</Grid>
+	</Grid>
+</Window>

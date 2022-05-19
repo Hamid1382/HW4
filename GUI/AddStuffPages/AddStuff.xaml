@@ -1,0 +1,25 @@
+﻿<Window x:Class="GUI.AddStuff"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:GUI"
+		mc:Ignorable="d"
+		Title="Add Stuff" Height="74" Width="295">
+	<Grid Margin="15">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="4*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		<Label Content="Add a new " Grid.Column="0"/>
+		<ComboBox Grid.Column="1" Name="combo">
+			<ComboBoxItem Content="Select ..." IsSelected="True" />
+			<ComboBoxItem Content="CPU" />
+			<ComboBoxItem Content="GPU" />
+			<ComboBoxItem Content="RAM" />
+			<ComboBoxItem Content="Motherboard" />
+		</ComboBox>
+		<Button Content="OK" Grid.Column="2" Click="Button_Click" />
+	</Grid>
+</Window>

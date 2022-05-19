@@ -1,0 +1,77 @@
+﻿<Window x:Class="GUI.AddGpu"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:GUI"
+		mc:Ignorable="d"
+		Title="AddGpu" Height="471" Width="432">
+	<Grid Margin="15">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="5*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition Height="2*"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Label Content="Name" Grid.Column="0" Grid.Row="0"/>
+		<Label Content="Price" Grid.Column="0" Grid.Row="1"/>
+		<Label Content="Discount" Grid.Column="0" Grid.Row="2"/>
+		<Label Content="Manufactor" Grid.Column="0" Grid.Row="3"/>
+		<Label Content="Count" Grid.Column="0" Grid.Row="4"/>
+		<Label Content="State" Grid.Column="0" Grid.Row="5"/>
+		<Label Content="VRAM size" Grid.Column="0" Grid.Row="6"/>
+		<Label Content="Series" Grid.Column="0" Grid.Row="7"/>
+		<Label Content="PCIe version" Grid.Column="0" Grid.Row="8"/>
+		<Label Content="Max Displays" Grid.Column="0" Grid.Row="9"/>
+		<Label Content="Max Resolution" Grid.Column="0" Grid.Row="10"/>
+		<Label Content="VRAM Module" Grid.Column="0" Grid.Row="11"/>
+		<Label Content="Description" Grid.Column="0" Grid.Row="12"/>
+
+		<TextBox Name="Name" Grid.Column="1" Grid.Row="0"/>
+		<TextBox Name="Price" Grid.Column="1" Grid.Row="1"/>
+		<TextBox Name="Discount" Grid.Column="1" Grid.Row="2"/>
+		<TextBox Name="Manufactor" Grid.Column="1" Grid.Row="3"/>
+		<TextBox Name="Count" Grid.Column="1" Grid.Row="4"/>
+		<ComboBox Name="State" Grid.Column="1" Grid.Row="5">
+			<ComboBoxItem Content="Draft" IsSelected="True"/>
+			<ComboBoxItem Content="Visible"/>
+		</ComboBox>
+		<TextBox Name="VramSize" Grid.Column="1" Grid.Row="6"/>
+		<TextBox Name="Series" Grid.Column="1" Grid.Row="7"/>
+		<ComboBox Name="PciVersion" Grid.Column="1" Grid.Row="8">
+			<ComboBoxItem Content="1"/>
+			<ComboBoxItem Content="2"/>
+			<ComboBoxItem Content="3"/>
+			<ComboBoxItem Content="4"/>
+			<ComboBoxItem Content="5"/>
+		</ComboBox>
+		<TextBox Name="MaxDisplayPossible" Grid.Column="1" Grid.Row="9"/>
+		<TextBox Name="MaxResolution" Grid.Column="1" Grid.Row="10"/>
+		<ComboBox Name="VramModule" Grid.Column="1" Grid.Row="11">
+			<ComboBoxItem Content="1"/>
+			<ComboBoxItem Content="2"/>
+			<ComboBoxItem Content="3"/>
+			<ComboBoxItem Content="4"/>
+			<ComboBoxItem Content="5"/>
+			<ComboBoxItem Content="5x"/>
+			<ComboBoxItem Content="6"/>
+			<ComboBoxItem Content="6x"/>
+		</ComboBox>
+		<TextBox Name="Description" Grid.Column="1" Grid.Row="12" AcceptsReturn="True"/>
+		<Button Content="Add" Grid.Column="1" Grid.Row="13"/>
+	</Grid>
+</Window>

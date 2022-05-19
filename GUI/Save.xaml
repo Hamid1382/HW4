@@ -1,0 +1,22 @@
+﻿<Window x:Class="GUI.Save"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Save" Height="79" Width="428">
+    <StackPanel Orientation="Vertical">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Save as:" Grid.Column="0"/>
+			<TextBox Name ="PathContainer" Text="C:\1.json" VerticalAlignment="Center"  Grid.Column="1" IsEnabled="False" />
+            <Button Content="Browse" Name="Browse_Save" Grid.Column="2" Margin="5" Click="Browse_Save_Click"/>
+        </Grid>
+        <Button Content="Save" Name="Save_Save" Margin="5" Click="Save_Save_Click"/>
+    </StackPanel>
+</Window>
