@@ -62,14 +62,27 @@ namespace BLL
 
 		public static CPerson GetPersonByID(uint ID) =>
 			dataHolder.People.Find(x => x.Id == ID);
+
 		public static CMerchandise GetMerchandisenByID(uint ID) =>
 			dataHolder.Goods.Find(x => x.ID == ID);
-		public static uint GetNewPersonID() => (uint)dataHolder.People.Count;
-		public static uint GetNewStuffID() => (uint)dataHolder.Goods.Count;
-		public static void AddPerson(CPerson person) => dataHolder.People.Add(person);
-		public static void AddStuff(CMerchandise merchandise) => dataHolder.Goods.Add(merchandise);
-		public static bool RemovePerson(CPerson person) => dataHolder.People.Remove(person); //totally Writted by intelliSense.
-		public static bool RemoveStuff(CMerchandise merchandise) => dataHolder.Goods.Remove(merchandise);
+
+		public static uint GetNewPersonID() => 
+			(uint)dataHolder.People.Count;
+
+		public static uint GetNewStuffID() => 
+			(uint)dataHolder.Goods.Count;
+
+		public static void AddPerson(CPerson person) => 
+			dataHolder.People.Add(person);
+
+		public static void AddStuff(CMerchandise merchandise) => 
+			dataHolder.Goods.Add(merchandise);
+
+		public static bool RemovePerson(CPerson person) => 
+			dataHolder.People.Remove(person); //totally Writted by intelliSense.
+
+		public static bool RemoveStuff(CMerchandise merchandise) => 
+			dataHolder.Goods.Remove(merchandise);
 
 	}
 }

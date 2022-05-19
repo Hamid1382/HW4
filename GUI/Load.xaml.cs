@@ -38,6 +38,7 @@ namespace GUI
 		private void Load_Load_Click(object sender, RoutedEventArgs e)
 		{
 			DataStorage.PerviousSession(ofd.FileName);
+			this.Close();
 		}
 	}
 }

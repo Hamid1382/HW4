@@ -91,6 +91,7 @@ namespace GUI
 
 			Logic.AddGpu(this.Name.Text, this.Description.Text, price, discount, this.Manufactor.Text, count, (EState) this.State.SelectedIndex, vRamSize,
 				(ushort) PciVersion.SelectedIndex,maxDispalyPossible, resolution, this.Series.Text, (EGDDR) this.VramModule.SelectedIndex);
+			this.Close();
 		}
 	}
 }
