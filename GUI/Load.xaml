@@ -14,9 +14,9 @@
 				<ColumnDefinition Width="1*"/>
 			</Grid.ColumnDefinitions>
 			<Label Content="Load File: " Grid.Column="0"/>
-			<TextBox Text="C:\1.json" VerticalAlignment="Center"  Grid.Column="1"/>
-			<Button Content="Browse" Name="Browse_Load" Grid.Column="2" Margin="5"/>
+			<TextBox Name="PathHolder" IsEnabled="False" Text="C:\1.json" VerticalAlignment="Center"  Grid.Column="1"/>
+			<Button Content="Browse" Name="Browse_Load" Grid.Column="2" Margin="5" Click="Browse_Load_Click"/>
 		</Grid>
-		<Button Content="Load" Name="Load_Load" Margin="5"/>
+		<Button Content="Load" Name="Load_Load" Margin="5" Click="Load_Load_Click"/>
 	</StackPanel>
 </Window>

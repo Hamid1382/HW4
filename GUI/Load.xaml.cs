@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -19,9 +21,23 @@ namespace GUI
 	/// </summary>
 	public partial class Load : Window
 	{
+		OpenFileDialog ofd;
 		public Load()
 		{
 			InitializeComponent();
+			ofd = new OpenFileDialog();
+			ofd.Filter = "Json File (*.json)|*.json";
+		}
+
+		private void Browse_Load_Click(object sender, RoutedEventArgs e)
+		{
+			ofd.ShowDialog();
+			this.PathHolder.Text = ofd.FileName;
+		}
+
+		private void Load_Load_Click(object sender, RoutedEventArgs e)
+		{
+			DataStorage.PerviousSession(ofd.FileName);
 		}
 	}
 }
