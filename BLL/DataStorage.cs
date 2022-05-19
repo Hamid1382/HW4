@@ -26,8 +26,11 @@ namespace BLL
 		private static JsonSerializer serializer = new JsonSerializer();
 		public static string SavePath { get; set; }
 		private static DataHolder dataHolder;
-		public static void NewSession() =>
+		public static void NewSession()
+		{
+			SavePath = null;
 			dataHolder = new DataHolder();
+		}
 		public static void PerviousSession(string savePath)
 		{
 			SavePath = savePath;

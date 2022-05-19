@@ -72,6 +72,6 @@
 			<ComboBoxItem Content="6x"/>
 		</ComboBox>
 		<TextBox Name="Description" Grid.Column="1" Grid.Row="12" AcceptsReturn="True"/>
-		<Button Content="Add" Grid.Column="1" Grid.Row="13"/>
+		<Button Content="Add" Grid.Column="1" Grid.Row="13" Click="Button_Click"/>
 	</Grid>
 </Window>
