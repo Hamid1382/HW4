@@ -10,7 +10,7 @@ namespace DAL.Goods
 	{
 		public static bool isValidCapacity(uint capacity) => 
 			capacity >= 128 && capacity <= 64000;
-		public static bool isValidModuleCount(int moduleCount) => 
+		public static bool isValidModuleCount(ushort moduleCount) => 
 			moduleCount >= 1 && moduleCount <= 4;
 		public Eddr DdrVersion { get; set; }
 		public ushort ModuleCount { get; set; }

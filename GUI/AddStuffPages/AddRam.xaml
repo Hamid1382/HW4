@@ -21,6 +21,7 @@
 			<RowDefinition/>
 			<RowDefinition/>
 			<RowDefinition/>
+			<RowDefinition/>
 			<RowDefinition Height="2*"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
@@ -33,7 +34,8 @@
 		<Label Content="Module count" Grid.Column="0" Grid.Row="6"/>
 		<Label Content="Capacity" Grid.Column="0" Grid.Row="7"/>
 		<Label Content="DDR version" Grid.Column="0" Grid.Row="8"/>
-		<Label Content="Description" Grid.Column="0" Grid.Row="9"/>
+		<Label Content="Frequncy" Grid.Column="0" Grid.Row="9"/>
+		<Label Content="Description" Grid.Column="0" Grid.Row="10"/>
 
 		<TextBox Name="Name" Grid.Column="1" Grid.Row="0"/>
 		<TextBox Name="Price" Grid.Column="1" Grid.Row="1"/>
@@ -53,6 +55,7 @@
 			<ComboBoxItem Content="DDR4"/>
 			<ComboBoxItem Content="DDR5"/>
 		</ComboBox>
+		<TextBox Name="Frequncy" Grid.Column="1" Grid.Row="9"/>
 		<TextBox Name="Description" Grid.Column="1" Grid.Row="9" AcceptsReturn="True"/>
 		<Button Content="Add" Grid.Column="1" Grid.Row="14"/>
 	</Grid>
