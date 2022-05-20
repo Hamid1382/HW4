@@ -77,6 +77,12 @@
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewGoodsUC\AddGpuUC.xaml.cs">
+      <DependentUpon>AddGpuUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGoodsUC\ViewCpuUC.xaml.cs">
+      <DependentUpon>ViewCpuUC.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddStuffPages\AddCpu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +134,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SignIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGoodsUC\AddGpuUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGoodsUC\ViewCpuUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
