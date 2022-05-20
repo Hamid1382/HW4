@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.ViewGoodsUC"
              mc:Ignorable="d" 
-             d:DesignHeight="490" Width="315">
+             d:DesignHeight="490" Width="350">
 	<Grid Background="DarkGreen">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="3*"/>
@@ -25,28 +25,26 @@
 			<RowDefinition/>
 			<RowDefinition/>
 			<RowDefinition/>
-			<RowDefinition/>
 			<RowDefinition Height="3*"/>
 			<RowDefinition/>
 			<RowDefinition Height="0.5*"/>
 		</Grid.RowDefinitions>
-		<TextBlock Name="Name" Foreground="LightGray" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+		<TextBlock Name="Name" Foreground="White" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
 			   HorizontalAlignment="Center" FontWeight="Bold" TextTrimming="WordEllipsis"/>
-		<Label Content="Price :"			Foreground="LightGray" Grid.Column="0" Grid.Row="1"/>
-		<Label Content="Available :"		Foreground="LightGray" Grid.Column="0" Grid.Row="2"/>
-		<Label Content="Rate :"				Foreground="LightGray" Grid.Column="0" Grid.Row="3"/>
-		<Label Content="Added at :"			Foreground="LightGray" Grid.Column="0" Grid.Row="4"/>
-		<Label Content="Last Update at :"	Foreground="LightGray" Grid.Column="0" Grid.Row="5"/>
-		<Label Content="Manufacturer :"		Foreground="LightGray" Grid.Column="0" Grid.Row="6"/>
-		<Label Content=" :"		Foreground="LightGray" Grid.Column="0" Grid.Row="7"/>
-		<Label Content=" :"		Foreground="LightGray" Grid.Column="0" Grid.Row="8"/>
-		<Label Content=" :"		Foreground="LightGray" Grid.Column="0" Grid.Row="9"/>
-		<Label Content=" :"		Foreground="LightGray" Grid.Column="0" Grid.Row="10"/>
-		<Label Content=" :"				Foreground="LightGray" Grid.Column="0" Grid.Row="11"/>
-		<Label Content=" :"			Foreground="LightGray" Grid.Column="0" Grid.Row="12"/>
-		<Label Content=" :"		Foreground="LightGray" Grid.Column="0" Grid.Row="13"/>
-		<Label Content="Description :"		Foreground="LightGray" Grid.Column="0" Grid.Row="14"/>
-		<Grid Grid.Row="15" Grid.ColumnSpan="2">
+		<Label Content="Price :"				Foreground="LightGray" Grid.Column="0" Grid.Row="1"/>
+		<Label Content="Available :"			Foreground="LightGray" Grid.Column="0" Grid.Row="2"/>
+		<Label Content="Rate :"					Foreground="LightGray" Grid.Column="0" Grid.Row="3"/>
+		<Label Content="Added at :"				Foreground="LightGray" Grid.Column="0" Grid.Row="4"/>
+		<Label Content="Last Update at :"		Foreground="LightGray" Grid.Column="0" Grid.Row="5"/>
+		<Label Content="Manufacturer :"			Foreground="LightGray" Grid.Column="0" Grid.Row="6"/>
+		<Label Content="VRam Size :"			Foreground="LightGray" Grid.Column="0" Grid.Row="7"/>
+		<Label Content="PCIe Version :"			Foreground="LightGray" Grid.Column="0" Grid.Row="8"/>
+		<Label Content="Max Display possible :"	Foreground="LightGray" Grid.Column="0" Grid.Row="9"/>
+		<Label Content="Max Resolution :"		Foreground="LightGray" Grid.Column="0" Grid.Row="10"/>
+		<Label Content="VRam module :"				Foreground="LightGray" Grid.Column="0" Grid.Row="11"/>
+		<Label Content="Series :"			Foreground="LightGray" Grid.Column="0" Grid.Row="12"/>
+		<Label Content="Description :"		Foreground="LightGray" Grid.Column="0" Grid.Row="13"/>
+		<Grid Grid.Row="14" Grid.ColumnSpan="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="3*"/>
 				<ColumnDefinition Width="5*"/>
@@ -66,7 +64,6 @@
 		<TextBlock Name="Lithographic"	Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="WordEllipsis"/>
 		<TextBlock Name="TDP"			Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="WordEllipsis"/>
 		<TextBlock Name="Series"		Foreground="LightGray" Grid.Column="1" Grid.Row="12" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="DDRSupport"	Foreground="LightGray" Grid.Column="1" Grid.Row="13" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="14" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="13" TextTrimming="WordEllipsis"/>
 	</Grid>
 </UserControl>
