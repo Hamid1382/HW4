@@ -77,11 +77,17 @@
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewGoodsUC\AddGpuUC.xaml.cs">
-      <DependentUpon>AddGpuUC.xaml</DependentUpon>
+    <Compile Include="ViewGoodsUC\ViewGpuUC.xaml.cs">
+      <DependentUpon>ViewGpuUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewGoodsUC\ViewCpuUC.xaml.cs">
       <DependentUpon>ViewCpuUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGoodsUC\ViewMotherboardUC.xaml.cs">
+      <DependentUpon>ViewMotherboardUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGoodsUC\ViewRamUC.xaml.cs">
+      <DependentUpon>ViewRamUC.xaml</DependentUpon>
     </Compile>
     <Page Include="AddStuffPages\AddCpu.xaml">
       <SubType>Designer</SubType>
@@ -137,11 +143,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewGoodsUC\AddGpuUC.xaml">
+    <Page Include="ViewGoodsUC\ViewGpuUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewGoodsUC\ViewCpuUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGoodsUC\ViewMotherboardUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGoodsUC\ViewRamUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

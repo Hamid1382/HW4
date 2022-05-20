@@ -1,20 +1,17 @@
-﻿<UserControl x:Class="GUI.ViewGoodsUC.ViewCpuUC"
+﻿<UserControl x:Class="GUI.ViewGoodsUC.ViewRamUC"
 			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:local="clr-namespace:GUI.ViewGoodsUC"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="490" Width="350">
+			d:DesignHeight="490" Width="350">
 	<Grid Background="DarkGreen">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="3*"/>
 			<ColumnDefinition Width="5*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
 			<RowDefinition/>
 			<RowDefinition/>
 			<RowDefinition/>
@@ -38,15 +35,12 @@
 		<Label Content="Added at :"			Foreground="LightGray" Grid.Column="0" Grid.Row="4"/>
 		<Label Content="Last Update at :"	Foreground="LightGray" Grid.Column="0" Grid.Row="5"/>
 		<Label Content="Manufacturer :"		Foreground="LightGray" Grid.Column="0" Grid.Row="6"/>
-		<Label Content="Core Count :"		Foreground="LightGray" Grid.Column="0" Grid.Row="7"/>
-		<Label Content="Thread Count :"		Foreground="LightGray" Grid.Column="0" Grid.Row="8"/>
-		<Label Content="Frequency :"		Foreground="LightGray" Grid.Column="0" Grid.Row="9"/>
-		<Label Content="Lithographic :"		Foreground="LightGray" Grid.Column="0" Grid.Row="10"/>
-		<Label Content="TDP :"				Foreground="LightGray" Grid.Column="0" Grid.Row="11"/>
-		<Label Content="Series :"			Foreground="LightGray" Grid.Column="0" Grid.Row="12"/>
-		<Label Content="DDR Support :"		Foreground="LightGray" Grid.Column="0" Grid.Row="13"/>
-		<Label Content="Description :"		Foreground="LightGray" Grid.Column="0" Grid.Row="14"/>
-		<Grid Grid.Row="15" Grid.ColumnSpan="2">
+		<Label Content="Capacity :"			Foreground="LightGray" Grid.Column="0" Grid.Row="7"/>
+		<Label Content="DDR Version :"		Foreground="LightGray" Grid.Column="0" Grid.Row="8"/>
+		<Label Content="Module Count :"		Foreground="LightGray" Grid.Column="0" Grid.Row="9"/>
+		<Label Content="Frequency :"		Foreground="LightGray" Grid.Column="0" Grid.Row="10"/>
+		<Label Content="Description :"		Foreground="LightGray" Grid.Column="0" Grid.Row="11"/>
+		<Grid Grid.Row="12" Grid.ColumnSpan="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="3*"/>
 				<ColumnDefinition Width="5*"/>
@@ -60,13 +54,10 @@
 		<TextBlock Name="Added"			Foreground="LightGray" Grid.Column="1" Grid.Row="4"  TextTrimming="WordEllipsis"/>
 		<TextBlock Name="Updated"		Foreground="LightGray" Grid.Column="1" Grid.Row="5"  TextTrimming="WordEllipsis"/>
 		<TextBlock Name="Manufacturer"	Foreground="LightGray" Grid.Column="1" Grid.Row="6"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="CoreCount"		Foreground="LightGray" Grid.Column="1" Grid.Row="7"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="ThreadCount"	Foreground="LightGray" Grid.Column="1" Grid.Row="8"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Frequency"		Foreground="LightGray" Grid.Column="1" Grid.Row="9"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Lithographic"	Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="TDP"			Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Series"		Foreground="LightGray" Grid.Column="1" Grid.Row="12" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="DDRSupport"	Foreground="LightGray" Grid.Column="1" Grid.Row="13" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="14" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Capacity"		Foreground="LightGray" Grid.Column="1" Grid.Row="7"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="DDRVersion"	Foreground="LightGray" Grid.Column="1" Grid.Row="8"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="ModuleCount"	Foreground="LightGray" Grid.Column="1" Grid.Row="9"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Frequency"		Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="WordEllipsis"/>
 	</Grid>
 </UserControl>
