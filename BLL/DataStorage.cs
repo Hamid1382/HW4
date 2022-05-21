@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace BLL
 {
-	internal class DataHolder
+	public class DataHolder
 	{
 		public List<CPerson> People;
 		public List<CMerchandise> Goods;
@@ -25,7 +25,7 @@ namespace BLL
 	{
 		private static JsonSerializer serializer = new JsonSerializer();
 		public static string SavePath { get; set; }
-		private static DataHolder dataHolder;
+		public static DataHolder dataHolder;
 		public static void NewSession()
 		{
 			SavePath = null;
