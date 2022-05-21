@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
+using System.Text.RegularExpressions;
 
 namespace GUI
 {
@@ -22,6 +24,32 @@ namespace GUI
 		public SignIn()
 		{
 			InitializeComponent();
+		}
+		public bool reMatch(TextBox textBox, string regex)
+		{
+			bool a = Regex.IsMatch(textBox.Text, regex);
+			match(textBox, a);
+			return a;
+		}
+		public void match(TextBox textBox, bool a)
+		{
+			if (a)
+				textBox.Foreground = Brushes.Black;
+			else
+				textBox.Foreground = Brushes.Red;
+		}
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			bool isAllgood = true, a;
+			a = password.Text == cpassword.Text;
+			match(cpassword, a);
+			isAllgood &= a;
+			a = reMatch(username, @"[0-9_A-z.]{5,16}");
+			isAllgood &= a;
+			if (!isAllgood)
+				return;
+			Logic.AddPerson(FullName.Text, username.Text, password.Text);
+			this.Close();
 		}
 	}
 }

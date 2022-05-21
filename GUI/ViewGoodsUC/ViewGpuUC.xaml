@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="GUI.ViewGoodsUC.AddGpuUC"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:GUI.ViewGoodsUC"
-             mc:Ignorable="d" 
-             d:DesignHeight="490" Width="350">
+﻿<UserControl x:Class="GUI.ViewGoodsUC.ViewGpuUC"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:GUI.ViewGoodsUC"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="490" Width="350">
 	<Grid Background="DarkGreen">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="3*"/>
@@ -52,18 +52,18 @@
 			</Grid.ColumnDefinitions>
 			<Button Grid.Column="1" Content="Buy" FontWeight="Bold"/>
 		</Grid>
-		<TextBlock Name="Price"			Foreground="LightGray" Grid.Column="1" Grid.Row="1"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Available"		Foreground="LightGray" Grid.Column="1" Grid.Row="2"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Rate"			Foreground="LightGray" Grid.Column="1" Grid.Row="3"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Added"			Foreground="LightGray" Grid.Column="1" Grid.Row="4"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Updated"		Foreground="LightGray" Grid.Column="1" Grid.Row="5"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Manufacturer"	Foreground="LightGray" Grid.Column="1" Grid.Row="6"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="CoreCount"		Foreground="LightGray" Grid.Column="1" Grid.Row="7"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="ThreadCount"	Foreground="LightGray" Grid.Column="1" Grid.Row="8"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Frequency"		Foreground="LightGray" Grid.Column="1" Grid.Row="9"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Lithographic"	Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="TDP"			Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Series"		Foreground="LightGray" Grid.Column="1" Grid.Row="12" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="13" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Price"					Foreground="LightGray" Grid.Column="1" Grid.Row="1"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Available"				Foreground="LightGray" Grid.Column="1" Grid.Row="2"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Rate"					Foreground="LightGray" Grid.Column="1" Grid.Row="3"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Added"					Foreground="LightGray" Grid.Column="1" Grid.Row="4"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Updated"				Foreground="LightGray" Grid.Column="1" Grid.Row="5"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Manufacturer"			Foreground="LightGray" Grid.Column="1" Grid.Row="6"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="VRamSize"					Foreground="LightGray" Grid.Column="1" Grid.Row="7"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="PCIVersion"			Foreground="LightGray" Grid.Column="1" Grid.Row="8"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="MaxDisplayPossible"	Foreground="LightGray" Grid.Column="1" Grid.Row="9"  TextTrimming="WordEllipsis"/>
+		<TextBlock Name="MaxResolution"		Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="VRamModule"				Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Series"			Foreground="LightGray" Grid.Column="1" Grid.Row="12" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Description"		Foreground="LightGray" Grid.Column="1" Grid.Row="13" TextTrimming="WordEllipsis"/>
 	</Grid>
 </UserControl>

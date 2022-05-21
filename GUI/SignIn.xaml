@@ -22,7 +22,7 @@
 				<ColumnDefinition Width="8*"/>
 				<ColumnDefinition Width="1*"/>
 			</Grid.ColumnDefinitions>
-			<Button Content="Sign in!" Grid.Column="1"/>
+			<Button Content="Sign in!" Grid.Column="1" Click="Button_Click"/>
 		</Grid>
 	</StackPanel>
 </Window>

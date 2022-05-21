@@ -4,16 +4,21 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:GUI"
+		xmlns:UC="clr-namespace:GUI.ViewGoodsUC"
 		mc:Ignorable="d"
-		Title="Hamid's Great Shop" Height="450" Width="800">
+		Title="Hamid's Great Shop" Height="793" Width="800">
 	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="647*"/>
+			<ColumnDefinition Width="153*"/>
+		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition MaxHeight="25"/>
 			<RowDefinition MaxHeight="25"/>
 			<RowDefinition MaxHeight="30"/>
 			<RowDefinition />
 		</Grid.RowDefinitions>
-		<Menu Grid.Row="0">
+		<Menu Grid.Row="0" Grid.ColumnSpan="2">
 			<MenuItem Header="System">
 				<MenuItem Header="Save Session" Click="Save_Session_Click"/>
 				<MenuItem Header="Load Session" Click="Load_Session_Click"/>
@@ -31,8 +36,8 @@
 				<MenuItem Header="Edit or remove" IsEnabled="False"/>
 			</MenuItem>
 		</Menu>
-		<TextBlock Text="Guess,   Sign in/login for more stuff!" Grid.Row="1" Padding="0 3 0 0"/>
-		<Grid Grid.Row="2">
+		<TextBlock Text="Guess,   Sign in/login for more stuff!" Grid.Row="1" Padding="0 3 0 0" Grid.ColumnSpan="2"/>
+		<Grid Grid.Row="2" Grid.ColumnSpan="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*"/>
 				<ColumnDefinition Width="2*"/>
@@ -49,5 +54,22 @@
 			<CheckBox IsChecked="True" Content="show Motherboards" Grid.Column="4" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
 			<CheckBox IsChecked="True" Content="show Rams" Grid.Column="5" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
 		</Grid>
+		<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Grid.Row="3" Grid.ColumnSpan="2">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<StackPanel Orientation="Vertical" Grid.Column="0" Name="LeftStack">
+				</StackPanel>
+				<StackPanel Orientation="Vertical" Grid.Column="1" Name="MiddleStack">
+
+				</StackPanel>
+				<StackPanel Orientation="Vertical" Grid.Column="2" Name="RightStack">
+
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
 	</Grid>
 </Window>

@@ -10,5 +10,7 @@ namespace DAL.Helper
 	{
 		public uint Width;
 		public uint Height;
+		public override string ToString() =>
+			Height.ToString() + "x" + Width.ToString();
 	}
 }

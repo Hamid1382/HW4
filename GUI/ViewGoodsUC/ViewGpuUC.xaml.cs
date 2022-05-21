@@ -17,8 +17,8 @@ namespace GUI.ViewGoodsUC {
 	/// <summary>
 	/// Interaction logic for AddGpuUC.xaml
 	/// </summary>
-	public partial class AddGpuUC : UserControl {
-		public AddGpuUC()
+	public partial class ViewGpuUC : UserControl {
+		public ViewGpuUC()
 		{
 			InitializeComponent();
 		}
