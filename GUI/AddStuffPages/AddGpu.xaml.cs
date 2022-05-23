@@ -18,14 +18,34 @@ using System.Text.RegularExpressions;
 
 namespace GUI
 {
-	/// <summary>
+	/// <summary>pci
 	/// Interaction logic for AddGpu.xaml
 	/// </summary>
 	public partial class AddGpu : Window
 	{
+		public uint? TargetID;
+		public EFunc functionality;
 		public AddGpu()
 		{
 			InitializeComponent();
+			if(this.functionality == EFunc.edit)
+			{
+				var gpu = DataStorage.GetMerchandisenByID(TargetID.Value) as CGpu;
+				Title = "Edit Gpu";
+				Name.Text = gpu.Name.ToString();
+				Price.Text = gpu.Price.ToString();
+				Discount.Text = gpu.Discount.ToString();
+				Manufactor.Text = gpu.Manufacturer.ToString();
+				Count.Text = gpu.Available.ToString();
+				State.SelectedIndex = (int) gpu.State;
+				Series.Text = gpu.Series;
+				Description.Text = gpu.Description;
+				VramSize.Text = gpu.VRamSize.ToString();
+				VramModule.SelectedIndex = (int) gpu.VRamModule;
+				PciVersion.Text = gpu.PCIVersion.ToString();
+				MaxDisplayPossible.Text = gpu.MaxDisplayPossible.ToString();
+				MaxResolution.Text = gpu.MaxResolution.ToString();
+			}
 		}
 		public bool reMatch(TextBox textBox, string regex)
 		{
@@ -88,9 +108,28 @@ namespace GUI
 			if (!isAllGood)
 				return;
 			var count = uint.Parse(Count.Text);
-
-			Logic.AddGpu(this.Name.Text, this.Description.Text, price, discount, this.Manufactor.Text, count, (EState) this.State.SelectedIndex, vRamSize,
-				(ushort) PciVersion.SelectedIndex,maxDispalyPossible, resolution, this.Series.Text, (EGDDR) this.VramModule.SelectedIndex);
+			if (this.functionality == EFunc.add)
+			{
+				Logic.AddGpu(this.Name.Text, this.Description.Text, price, discount, this.Manufactor.Text, count, (EState) this.State.SelectedIndex, vRamSize,
+				(ushort) PciVersion.SelectedIndex, maxDispalyPossible, resolution, this.Series.Text, (EGDDR) this.VramModule.SelectedIndex);
+			}
+			else
+			{
+				var gpu = DataStorage.GetMerchandisenByID(TargetID.Value) as CGpu;
+				gpu.LastUpdate = DateTime.Now;
+				gpu.Name = Name.Text;
+				gpu.Description = Description.Text;
+				gpu.Price = price;
+				gpu.Discount = discount;
+				gpu.Manufacturer = Manufactor.Text;
+				gpu.Available = count;
+				gpu.State = (EState) State.SelectedIndex;
+				gpu.VRamSize = vRamSize;
+				gpu.PCIVersion = (ushort) PciVersion.SelectedIndex;
+				gpu.MaxDisplayPossible = maxDispalyPossible;
+				gpu.MaxResolution = resolution;
+				gpu.VRamModule = (EGDDR) VramModule.SelectedIndex;
+			}
 			this.Close();
 		}
 	}
