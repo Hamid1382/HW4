@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BLL;
 using DAL.Goods;
+using DAL.Helper;
 using GUI.ViewGoodsUC;
 namespace GUI
 {
@@ -25,19 +26,17 @@ namespace GUI
 		public MainWindow()
 		{
 			InitializeComponent();
-			this.Activated += MainWindow_Activated;
 			EssentialChecks();
 		}
 
 		private void MainWindow_Activated(object sender, EventArgs e)
 		{
-			EssentialChecks();
 			AddGoodSafe();
 		}
 
 		public void EssentialChecks()
 		{
-			throw new NotImplementedException();
+			//
 		}
 
 		public void AddGoodSafe()
@@ -50,13 +49,16 @@ namespace GUI
 		public void AddGoods()
 		{
 			uint count = 0;
-			foreach(var merchandise in DataStorage.dataHolder.Goods)
+			var toAdd = DataStorage.dataHolder.Goods.Where<CMerchandise>(x => x.State == EState.Visible && x.Available > 0);
+			foreach (var merchandise in toAdd)
 			{
 				switch (merchandise)
 				{
 					case CCpu cpu:
-						var viewCpuUC = new ViewCpuUC();
-						viewCpuUC.ID = cpu.ID;
+						var viewCpuUC = new ViewCpuUC
+						{
+							ID = cpu.ID
+						};
 						viewCpuUC.Name.Text = cpu.Name;
 						viewCpuUC.Available.Text = cpu.Available.ToString();
 						viewCpuUC.Rate.Text = cpu.Rate.Percent.ToString() + "%";
@@ -87,8 +89,10 @@ namespace GUI
 						count %= 3;
 						break;
 					case CGpu gpu:
-						var viewGpuUC = new ViewGpuUC();
-						viewGpuUC.ID = gpu.ID;
+						var viewGpuUC = new ViewGpuUC
+						{
+							ID = gpu.ID
+						};
 						viewGpuUC.Name.Text = gpu.Name;
 						viewGpuUC.Available.Text = gpu.Available.ToString();
 						viewGpuUC.Rate.Text = gpu.Rate.Percent.ToString() + "%";
@@ -119,8 +123,10 @@ namespace GUI
 						count %= 3;
 						break;
 					case CMotherboard motherboard:
-						var viewMotherboard = new ViewMotherboard();
-						viewMotherboard.ID = motherboard.ID;
+						var viewMotherboard = new ViewMotherboard
+						{
+							ID = motherboard.ID
+						};
 						viewMotherboard.Name.Text = motherboard.Name;
 						viewMotherboard.Available.Text = motherboard.Available.ToString();
 						viewMotherboard.Rate.Text = motherboard.Rate.Percent.ToString() + "%";
@@ -149,8 +155,10 @@ namespace GUI
 						count %= 3;
 						break;
 					case CRam ram:
-						var viewRamUC = new ViewRamUC();
-						viewRamUC.ID = ram.ID;
+						var viewRamUC = new ViewRamUC
+						{
+							ID = ram.ID
+						};
 						viewRamUC.Name.Text = ram.Name;
 						viewRamUC.Available.Text = ram.Available.ToString();
 						viewRamUC.Rate.Text = ram.Rate.Percent.ToString() + "%";
@@ -204,7 +212,7 @@ namespace GUI
 										  MessageBoxImage.Question);
 			if (result == MessageBoxResult.Yes)
 			{
-				//reload session
+				DataStorage.Reload();
 			}
 		}
 		private void Sign_In_Click(object sender, RoutedEventArgs e) => 
@@ -220,10 +228,11 @@ namespace GUI
 										  MessageBoxImage.Question);
 			if (result == MessageBoxResult.Yes)
 			{
-				//Log out
+				Logic.currentUser = null;
 			}
 		}
 		private void Add_Goods_click(object sender, RoutedEventArgs e) =>
 			(new AddStuff()).ShowDialog();
+
 	}
 }
