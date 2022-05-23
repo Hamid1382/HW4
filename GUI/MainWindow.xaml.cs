@@ -26,11 +26,17 @@ namespace GUI
 		{
 			InitializeComponent();
 			this.Activated += MainWindow_Activated;
+			EssentialChecks();
 		}
 
 		private void MainWindow_Activated(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			EssentialChecks();
+		}
+
+		public void EssentialChecks()
+		{
+			
 		}
 
 		public void AddGoodsConditioned()
@@ -147,10 +153,10 @@ namespace GUI
 						viewRamUC.Updated.Text = ram.LastUpdate.ToString();
 						viewRamUC.Manufacturer.Text = ram.Manufacturer;
 						viewRamUC.Description.Text = ram.Description;
-						viewRamUC.Capacity.Text = ram.Capacity.ToString();
+						viewRamUC.Capacity.Text = ram.Capacity.ToString() + "MB";
 						viewRamUC.DDRVersion.Text = ram.DdrVersion.ToString();
 						viewRamUC.ModuleCount.Text = ram.ModuleCount.ToString();
-						viewRamUC.Frequency.Text = ram.Frequency.ToString();
+						viewRamUC.Frequency.Text = ram.Frequency.ToString() + "MH";
 
 						switch (count)
 						{

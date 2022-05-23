@@ -71,6 +71,7 @@
     <Compile Include="AddStuffPages\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EState.cs" />
     <Compile Include="Save.xaml.cs">
       <DependentUpon>Save.xaml</DependentUpon>
     </Compile>

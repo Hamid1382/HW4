@@ -18,14 +18,36 @@ using BLL;
 
 namespace GUI
 {
+
 	/// <summary>
 	/// Interaction logic for AddCpu.xaml
 	/// </summary>
 	public partial class AddCpu : Window
 	{
+		public uint? TargetID;
+		public EFunc Functionality;
 		public AddCpu()
 		{
 			InitializeComponent();
+			if(this.Functionality == EFunc.edit)
+			{
+				CCpu cpu = DataStorage.GetMerchandisenByID(TargetID.Value) as CCpu;
+				Title = "Edit Cpu";
+				Name.Text = cpu.Name.ToString();
+				Price.Text = cpu.Price.ToString();
+				Discount.Text = cpu.Discount.ToString();
+				Manufactor.Text = cpu.Manufacturer.ToString();
+				Count.Text = cpu.Available.ToString();
+				State.SelectedIndex = (int) cpu.State;
+				CoreCount.Text = cpu.CoreCount.ToString();
+				ThreadCount.Text = cpu.ThreadCount.ToString();
+				Frequency.Text = cpu.Frequency.ToString();
+				Lithographic.Text = cpu.Lithographic.ToString();
+				TDP.Text = cpu.TDP.ToString();
+				DDRSupport.SelectedIndex = (int) cpu.DdrSupport;
+				Series.Text = cpu.Series;
+				Description.Text = cpu.Description;
+			}
 		}
 
 		public bool reMatch(TextBox textBox, string regex)
@@ -101,10 +123,30 @@ namespace GUI
 			if (!isAllGood)
 				return;
 			var count = uint.Parse(Count.Text);
-
-			Logic.AddCpu(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
-				(EState)this.State.SelectedIndex, coreCount, threadCount, frequency, lithographic, tdp, (Eddr) this.DDRSupport.SelectedIndex, this.Series.Text);
-			this.Close();
+			if(this.Functionality == EFunc.add)
+			{
+				Logic.AddCpu(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
+					(EState) State.SelectedIndex, coreCount, threadCount, frequency, lithographic, tdp, (Eddr) this.DDRSupport.SelectedIndex, this.Series.Text);
+			}
+			else
+			{
+				var cpu = DataStorage.GetMerchandisenByID(TargetID.Value) as CCpu;
+				cpu.LastUpdate = DateTime.Now;
+				cpu.Name = Name.Text;
+				cpu.Description = Description.Text;
+				cpu.Price = price;
+				cpu.Discount = discount;
+				cpu.Manufacturer = Manufactor.Text;
+				cpu.Available = count;
+				cpu.State = (EState) State.SelectedIndex;
+				cpu.CoreCount = coreCount;
+				cpu.ThreadCount = threadCount;
+				cpu.Frequency = frequency;
+				cpu.Lithographic = lithographic;
+				cpu.DdrSupport = (Eddr) DDRSupport.SelectedIndex;
+				cpu.Series = Series.Text;
+			}
+			Close();
 		}
 	}
 }
