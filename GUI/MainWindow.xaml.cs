@@ -32,14 +32,15 @@ namespace GUI
 		private void MainWindow_Activated(object sender, EventArgs e)
 		{
 			EssentialChecks();
+			AddGoodSafe();
 		}
 
 		public void EssentialChecks()
 		{
-			
+			throw new NotImplementedException();
 		}
 
-		public void AddGoodsConditioned()
+		public void AddGoodSafe()
 		{
 			if(DataStorage.dataHolder != null)
 			{
@@ -55,6 +56,7 @@ namespace GUI
 				{
 					case CCpu cpu:
 						var viewCpuUC = new ViewCpuUC();
+						viewCpuUC.ID = cpu.ID;
 						viewCpuUC.Name.Text = cpu.Name;
 						viewCpuUC.Available.Text = cpu.Available.ToString();
 						viewCpuUC.Rate.Text = cpu.Rate.Percent.ToString() + "%";
@@ -86,6 +88,7 @@ namespace GUI
 						break;
 					case CGpu gpu:
 						var viewGpuUC = new ViewGpuUC();
+						viewGpuUC.ID = gpu.ID;
 						viewGpuUC.Name.Text = gpu.Name;
 						viewGpuUC.Available.Text = gpu.Available.ToString();
 						viewGpuUC.Rate.Text = gpu.Rate.Percent.ToString() + "%";
@@ -117,6 +120,7 @@ namespace GUI
 						break;
 					case CMotherboard motherboard:
 						var viewMotherboard = new ViewMotherboard();
+						viewMotherboard.ID = motherboard.ID;
 						viewMotherboard.Name.Text = motherboard.Name;
 						viewMotherboard.Available.Text = motherboard.Available.ToString();
 						viewMotherboard.Rate.Text = motherboard.Rate.Percent.ToString() + "%";
@@ -146,6 +150,7 @@ namespace GUI
 						break;
 					case CRam ram:
 						var viewRamUC = new ViewRamUC();
+						viewRamUC.ID = ram.ID;
 						viewRamUC.Name.Text = ram.Name;
 						viewRamUC.Available.Text = ram.Available.ToString();
 						viewRamUC.Rate.Text = ram.Rate.Percent.ToString() + "%";

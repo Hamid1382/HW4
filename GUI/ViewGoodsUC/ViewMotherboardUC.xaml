@@ -44,7 +44,7 @@
 				<ColumnDefinition Width="5*"/>
 				<ColumnDefinition Width="3*"/>
 			</Grid.ColumnDefinitions>
-			<Button Grid.Column="1" Content="Buy" FontWeight="Bold"/>
+			<Button Grid.Column="1" Content="Buy" FontWeight="Bold" Click="Buy_Click" Name="Buy"/>
 		</Grid>
 		<TextBlock Name="Price"			Foreground="LightGray" Grid.Column="1" Grid.Row="1"  TextTrimming="WordEllipsis"/>
 		<TextBlock Name="Available"		Foreground="LightGray" Grid.Column="1" Grid.Row="2"  TextTrimming="WordEllipsis"/>

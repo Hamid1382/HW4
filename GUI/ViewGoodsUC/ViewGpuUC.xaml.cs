@@ -12,15 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BLL;
 namespace GUI.ViewGoodsUC {
 	/// <summary>
 	/// Interaction logic for AddGpuUC.xaml
 	/// </summary>
 	public partial class ViewGpuUC : UserControl {
+		public uint ID;
 		public ViewGpuUC()
 		{
 			InitializeComponent();
+		}
+
+		private void Buy_Click(object sender, RoutedEventArgs e)
+		{
+			DataStorage.GetMerchandisenByID(ID).Available--;
+			uint available = DataStorage.GetMerchandisenByID(ID).Available;
+			Available.Text = available.ToString();
+			if (available == 0)
+				this.Buy.IsEnabled = false;
 		}
 	}
 }
