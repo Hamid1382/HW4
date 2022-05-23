@@ -20,11 +20,31 @@ namespace GUI
 	/// <summary>
 	/// Interaction logic for AddMotherBoard.xaml
 	/// </summary>
-	public partial class AddMotherBoard : Window
+	public partial class AddMotherBoard : Window 
 	{
+		public uint? TargetID;
+		public EFunc Functionality;
 		public AddMotherBoard()
 		{
 			InitializeComponent();
+			if (this.Functionality == EFunc.edit)
+			{
+				var motherboard= DataStorage.GetMerchandisenByID(TargetID.Value) as CMotherboard;
+				Title = "Edit Motherboard";
+				Name.Text = motherboard.Name.ToString();
+				Price.Text = motherboard.Price.ToString();
+				Discount.Text = motherboard.Discount.ToString();
+				Manufactor.Text = motherboard.Manufacturer.ToString();
+				Count.Text = motherboard.Available.ToString();
+				State.SelectedIndex = (int) motherboard.State;
+				Description.Text = motherboard.Description;
+				RamCount.Text = motherboard.RamSlotCount.ToString();
+				PciVersion.SelectedIndex = (int) motherboard.PCIVersion;
+				PciCount.Text = motherboard.PciCount.ToString();
+				Base.SelectedIndex = (int) motherboard.Base;
+				RaidSupport.Text = motherboard.RaidSupport.ToString();
+
+			}
 		}
 		public bool reMatch(TextBox textBox, string regex)
 		{
@@ -72,9 +92,27 @@ namespace GUI
 
 			if (!isAllGood)
 				return;
-
-			Logic.AddMotherboard(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
-				(EState) this.State.SelectedIndex,ramCount,(ushort)PciVersion.SelectedIndex,pciCount,(EBase)Base.SelectedIndex,raidSpppurt);
+			if (this.Functionality == EFunc.add)
+			{
+				Logic.AddMotherboard(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
+				(EState) this.State.SelectedIndex, ramCount, (ushort) PciVersion.SelectedIndex, pciCount, (EBase) Base.SelectedIndex, raidSpppurt);
+			}
+			else
+			{
+				var motherboard = DataStorage.GetMerchandisenByID(TargetID.Value) as CMotherboard;
+				motherboard.LastUpdate = DateTime.Now;
+				motherboard.Name = Name.Text;
+				motherboard.Description = Description.Text;
+				motherboard.Price = price;
+				motherboard.Discount = discount;
+				motherboard.Manufacturer = Manufactor.Text;
+				motherboard.Available = count;
+				motherboard.State = (EState) State.SelectedIndex;
+				motherboard.PCIVersion = (ushort) PciVersion.SelectedIndex;
+				motherboard.RamSlotCount = ramCount;
+				motherboard.PciCount = pciCount;
+				motherboard.Base = (EBase) Base.SelectedIndex;
+			}
 			this.Close();
 		}
 	}
