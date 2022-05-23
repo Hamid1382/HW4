@@ -31,16 +31,24 @@ namespace GUI
 			switch (selected)
 			{
 				case 1:
-					(new AddCpu()).ShowDialog();
+					var a = new AddCpu();
+					a.Functionality = EFunc.add;
+					a.Show();
 					break;
 				case 2:
-					(new AddGpu()).ShowDialog();
+					var b = new AddCpu();
+					b.Functionality = EFunc.add;
+					b.Show();
 					break;
 				case 3:
-					(new AddRam()).ShowDialog();
+					var c = new AddCpu();
+					c.Functionality = EFunc.add;
+					c.Show();
 					break;
 				case 4:
-					(new AddMotherBoard()).ShowDialog();
+					var d = new AddCpu();
+					d.Functionality = EFunc.add;
+					d.Show();
 					break;
 			}
 		}
