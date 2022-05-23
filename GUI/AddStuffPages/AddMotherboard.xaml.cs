@@ -43,7 +43,6 @@ namespace GUI
 				PciCount.Text = motherboard.PciCount.ToString();
 				Base.SelectedIndex = (int) motherboard.Base;
 				RaidSupport.Text = motherboard.RaidSupport.ToString();
-
 			}
 		}
 		public bool reMatch(TextBox textBox, string regex)
@@ -70,7 +69,6 @@ namespace GUI
 			isAllGood &= reMatch(Count, @"^[0-9]+$");
 			isAllGood &= reMatch(PciCount, @"^[0-9]+$");
 			isAllGood &= reMatch(RaidSupport, @"^[0-9]+$");
-
 
 			if (!isAllGood)
 				return;
@@ -113,7 +111,7 @@ namespace GUI
 				motherboard.PciCount = pciCount;
 				motherboard.Base = (EBase) Base.SelectedIndex;
 			}
-			this.Close();
+			Close();
 		}
 	}
 }

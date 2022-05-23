@@ -24,9 +24,28 @@ namespace GUI.AddStuffPages
 	/// </summary>
 	public partial class AddRam : Window
 	{
+
+		public uint? TargetID;
+		public EFunc Functionality;
 		public AddRam()
 		{
 			InitializeComponent();
+			if (this.Functionality == EFunc.edit)
+			{
+				var ram = DataStorage.GetMerchandisenByID(TargetID.Value) as CRam;
+				Title = "Edit Motherboard";
+				Name.Text = ram.Name.ToString();
+				Price.Text = ram.Price.ToString();
+				Discount.Text = ram.Discount.ToString();
+				Manufactor.Text = ram.Manufacturer.ToString();
+				Count.Text = ram.Available.ToString();
+				State.SelectedIndex = (int) ram.State;
+				Description.Text = ram.Description;
+				Capacity.Text = ram.Capacity.ToString() + "MB";
+				DDRSupport.SelectedIndex = (int) ram.DdrVersion;
+				Frequncy.Text = ram.Frequency.ToString() + "MH";
+				ModuleCount.Text = ram.ModuleCount.ToString();
+			}
 		}
 		public bool reMatch(TextBox textBox, string regex)
 		{
@@ -84,9 +103,27 @@ namespace GUI.AddStuffPages
 			if (!isAllGood)
 				return;
 			var count = uint.Parse(Count.Text);
-
-			Logic.AddRam(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
-				(EState) this.State.SelectedIndex,(Eddr)DDRSupport.SelectedIndex,moduleCount,capacity,frequency);
+			if (Functionality == EFunc.add)
+			{
+				Logic.AddRam(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
+				(EState) this.State.SelectedIndex, (Eddr) DDRSupport.SelectedIndex, moduleCount, capacity, frequency);
+			}
+			else
+			{
+				var ram = DataStorage.GetMerchandisenByID(TargetID.Value) as CRam;
+				ram.LastUpdate = DateTime.Now;
+				ram.Name = Name.Text;
+				ram.Description = Description.Text;
+				ram.Price = price;
+				ram.Discount = discount;
+				ram.Manufacturer = Manufactor.Text;
+				ram.Available = count;
+				ram.State = (EState) State.SelectedIndex;
+				ram.DdrVersion = (Eddr) DDRSupport.SelectedIndex;
+				ram.Frequency = frequency;
+				ram.Capacity = capacity;
+				ram.ModuleCount = moduleCount;
+			}
 		}
 	}
 }
