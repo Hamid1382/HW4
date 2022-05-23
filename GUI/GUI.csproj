@@ -78,6 +78,9 @@
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UCForEditStuffList.xaml.cs">
+      <DependentUpon>UCForEditStuffList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewGoodsUC\ViewGpuUC.xaml.cs">
       <DependentUpon>ViewGpuUC.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SignIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCForEditStuffList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

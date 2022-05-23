@@ -31,23 +31,31 @@ namespace GUI
 			switch (selected)
 			{
 				case 1:
-					var a = new AddCpu();
-					a.Functionality = EFunc.add;
+					var a = new AddCpu
+					{
+						Functionality = EFunc.add
+					};
 					a.Show();
 					break;
 				case 2:
-					var b = new AddCpu();
-					b.Functionality = EFunc.add;
+					var b = new AddGpu
+					{
+						functionality = EFunc.add
+					};
 					b.Show();
 					break;
 				case 3:
-					var c = new AddCpu();
-					c.Functionality = EFunc.add;
+					var c = new AddRam
+					{
+						Functionality = EFunc.add
+					};
 					c.Show();
 					break;
 				case 4:
-					var d = new AddCpu();
-					d.Functionality = EFunc.add;
+					var d = new AddMotherBoard
+					{
+						Functionality = EFunc.add
+					};
 					d.Show();
 					break;
 			}
