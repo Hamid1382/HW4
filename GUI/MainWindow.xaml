@@ -1,4 +1,4 @@
-﻿<Window x:Class="GUI.MainWindow" Activated="MainWindow_Activated"
+﻿<Window x:Class="GUI.MainWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -48,13 +48,19 @@
 				<ColumnDefinition Width="3*"/>
 				<ColumnDefinition Width="1*"/>
 			</Grid.ColumnDefinitions>
-			<Label Content="Show: " Grid.Column="0" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-			<CheckBox IsChecked="True" Content="Show All" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-			<CheckBox IsChecked="True" Content="show CPUs" Grid.Column="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-			<CheckBox IsChecked="True" Content="show GPUs" Grid.Column="3" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-			<CheckBox IsChecked="True" Content="show Motherboards" Grid.Column="4" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-			<CheckBox IsChecked="True" Content="show Rams" Grid.Column="5" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-			<Button Content="R" Grid.Column="8" Click="MainWindow_Activated"/>
+			<Label Content="Show: " Grid.Column="0" VerticalAlignment="Center" 
+				   VerticalContentAlignment="Center"/>
+			<CheckBox Name="ShowAll" Content="Show All" Grid.Column="1" Unchecked="ShowAll_Unchecked"
+					  VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="ShowAll_Checked"/>
+			<CheckBox Name="ShowCpu" IsChecked="True" Content="show CPUs" Grid.Column="2" 
+					  VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox Name="ShowGpu" IsChecked="True" Content="show GPUs" Grid.Column="3" 
+					  VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox Name="ShowMotherboard" IsChecked="True" Content="show Motherboards" 
+					  Grid.Column="4" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<CheckBox Name="ShowRam" IsChecked="True" Content="show Rams" Grid.Column="5" 
+					  VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Content="R" Grid.Column="8" Click="Button_Click"/>
 		</Grid>
 		<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Grid.Row="3" Grid.ColumnSpan="2">
 			<Grid>

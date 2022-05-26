@@ -5,15 +5,28 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:local="clr-namespace:GUI"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="30.133" d:DesignWidth="357.458">
-	<StackPanel Background="LightGray" Orientation="Horizontal">
-		<TextBlock Name="ID" Text="0010" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0"/>
-		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-		<TextBlock Name="Name" Text="Intel Core-i7 2022" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0"/>
-		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-		<TextBlock Name="Added" Text="2022/15/8 10:20:11 UC" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0"/>
-		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-		<Button Name="Edit" Content="Edit" Padding="15 0" Margin="10 5"/>
+			 d:DesignHeight="30" d:DesignWidth="546.8">
+	<Grid Background="LightGray">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition MaxWidth="7"/>
+			<ColumnDefinition Width="7*"/>
+			<ColumnDefinition MaxWidth="7"/>
+			<ColumnDefinition Width="4*"/>
+			<ColumnDefinition MaxWidth="7"/>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition MaxWidth="7"/>
+			<ColumnDefinition Width="3.5*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Name="ID" Text="0010" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="0"/>
+		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Grid.Column="1"/>
+		<TextBlock Name="Name" Text="Intel Core-i7 2022" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" FontWeight="SemiBold" Grid.Column="2"/>
+		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Grid.Column="3" />
+		<TextBlock Name="Added" Text="2022/15/8 10:20:11 UC" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="4"/>
+		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"  Grid.Column="5"/>
+		<Button Name="Edit" Content="Edit" Padding="15 0" Margin="10 5" Grid.Column="6"/>
+		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"  Grid.Column="7"/>
+		<Button Name="Delete" Content="Delete" Padding="15 0" Margin="10 5" Foreground="Red" Grid.Column="8" FontWeight="Light"/>
 
-	</StackPanel>
+	</Grid>
 </UserControl>

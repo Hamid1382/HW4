@@ -92,8 +92,22 @@ namespace GUI
 				return;
 			if (this.Functionality == EFunc.add)
 			{
-				Logic.AddMotherboard(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
-				(EState) this.State.SelectedIndex, ramCount, (ushort) PciVersion.SelectedIndex, pciCount, (EBase) Base.SelectedIndex, raidSpppurt);
+				var motherboard = new CMotherboard()
+				{
+					Name = Name.Text,
+					Description = Description.Text,
+					Price = price,
+					Discount = discount,
+					Manufacturer = Manufactor.Text,
+					Available = count,
+					State = (EState) State.SelectedIndex,
+					RamSlotCount = ramCount,
+					PCIVersion = (ushort) PciVersion.SelectedIndex,
+					PciCount = pciCount,
+					Base = (EBase) Base.SelectedIndex,
+					RaidSupport = raidSpppurt
+				};
+				Logic.AddStuff(motherboard);
 			}
 			else
 			{

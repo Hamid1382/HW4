@@ -8,7 +8,7 @@ namespace DAL.Helper
 {
 	public enum EGDDR
 	{
-		Gddr1 = 1,
+		Gddr1,
 		Gddr2,
 		Gddr3,
 		Gddr4,

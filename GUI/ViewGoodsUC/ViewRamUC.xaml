@@ -6,7 +6,7 @@
 			 xmlns:local="clr-namespace:GUI.ViewGoodsUC"
 			 mc:Ignorable="d" 
 			d:DesignHeight="490" Width="350">
-	<Grid Background="DarkGreen">
+	<Grid Background="DarkGreen" Margin="3">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="3*"/>
 			<ColumnDefinition Width="5*"/>
@@ -28,7 +28,7 @@
 			<RowDefinition Height="0.5*"/>
 		</Grid.RowDefinitions>
 		<TextBlock Name="Name" Foreground="White" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
-			   HorizontalAlignment="Center" FontWeight="Bold" TextTrimming="WordEllipsis"/>
+			   HorizontalAlignment="Center" FontWeight="Bold" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
 		<Label Content="Price :"			Foreground="LightGray" Grid.Column="0" Grid.Row="1"/>
 		<Label Content="Available :"		Foreground="LightGray" Grid.Column="0" Grid.Row="2"/>
 		<Label Content="Rate :"				Foreground="LightGray" Grid.Column="0" Grid.Row="3"/>
@@ -48,16 +48,16 @@
 			</Grid.ColumnDefinitions>
 			<Button Grid.Column="1" Content="Buy" FontWeight="Bold" Click="Buy_Click" Name="Buy"/>
 		</Grid>
-		<TextBlock Name="Price"			Foreground="LightGray" Grid.Column="1" Grid.Row="1"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Available"		Foreground="LightGray" Grid.Column="1" Grid.Row="2"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Rate"			Foreground="LightGray" Grid.Column="1" Grid.Row="3"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Added"			Foreground="LightGray" Grid.Column="1" Grid.Row="4"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Updated"		Foreground="LightGray" Grid.Column="1" Grid.Row="5"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Manufacturer"	Foreground="LightGray" Grid.Column="1" Grid.Row="6"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Capacity"		Foreground="LightGray" Grid.Column="1" Grid.Row="7"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="DDRVersion"	Foreground="LightGray" Grid.Column="1" Grid.Row="8"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="ModuleCount"	Foreground="LightGray" Grid.Column="1" Grid.Row="9"  TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Frequency"		Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="WordEllipsis"/>
-		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="WordEllipsis"/>
+		<TextBlock Name="Price"			Foreground="LightGray" Grid.Column="1" Grid.Row="1"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Available"		Foreground="LightGray" Grid.Column="1" Grid.Row="2"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Rate"			Foreground="LightGray" Grid.Column="1" Grid.Row="3"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Added"			Foreground="LightGray" Grid.Column="1" Grid.Row="4"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Updated"		Foreground="LightGray" Grid.Column="1" Grid.Row="5"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Manufacturer"	Foreground="LightGray" Grid.Column="1" Grid.Row="6"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Capacity"		Foreground="LightGray" Grid.Column="1" Grid.Row="7"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="DDRVersion"	Foreground="LightGray" Grid.Column="1" Grid.Row="8"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="ModuleCount"	Foreground="LightGray" Grid.Column="1" Grid.Row="9"  TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Frequency"		Foreground="LightGray" Grid.Column="1" Grid.Row="10" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+		<TextBlock Name="Description"	Foreground="LightGray" Grid.Column="1" Grid.Row="11" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
 	</Grid>
 </UserControl>

@@ -7,8 +7,7 @@ using DAL;
 using DAL.Helper;
 using DAL.Goods;
 using System.IO;
-using Newtonsoft.Json;
-
+using System.Xml.Serialization;
 namespace BLL
 {
 	public class DataHolder
@@ -23,7 +22,18 @@ namespace BLL
 	}
 	public static class DataStorage
 	{
-		private static JsonSerializer serializer = new JsonSerializer();
+		private static XmlSerializer serializer;
+		static DataStorage()
+		{
+			var xmlAttributes = new XmlAttributes();
+			xmlAttributes.XmlElements.Add(new XmlElementAttribute("CCpu", typeof(CCpu)));
+			xmlAttributes.XmlElements.Add(new XmlElementAttribute("CGpu", typeof(CGpu)));
+			xmlAttributes.XmlElements.Add(new XmlElementAttribute("CMotherboard", typeof(CMotherboard)));
+			xmlAttributes.XmlElements.Add(new XmlElementAttribute("CRam", typeof(CRam)));
+			var xmlAttributeOverrides = new XmlAttributeOverrides();
+			xmlAttributeOverrides.Add(typeof(DataHolder) , "Goods" , xmlAttributes);
+			serializer = new XmlSerializer(typeof(DataHolder) , xmlAttributeOverrides);
+		}
 		public static string SavePath { get; set; }
 		public static DataHolder dataHolder;
 		public static void NewSession()
@@ -33,34 +43,16 @@ namespace BLL
 		}
 		public static void PerviousSession(string savePath)
 		{
-			SavePath = savePath;
-			using (var fileStream = new StreamReader(savePath))
+			using(var stream = new StreamReader(savePath))
 			{
-				using(var jsonStream = new JsonTextReader(fileStream))
-				{
-					dataHolder = serializer.Deserialize<DataHolder>(jsonStream);
-				}
+				dataHolder = serializer.Deserialize(stream) as DataHolder;
 			}
 		}
-		public static void Reload()
-		{
-			using (var fileStream = new StreamReader(SavePath))
-			{
-				using(var jsonStream = new JsonTextReader(fileStream))
-				{
-					dataHolder = serializer.Deserialize<DataHolder>(jsonStream);
-				}
-}
-		}
+		public static void Reload() => PerviousSession(SavePath);
 		public static void Save()
 		{
-			using (var fileStream = new StreamWriter(SavePath))
-			{
-				using (var JsonStream = new JsonTextWriter(fileStream))
-				{
-					serializer.Serialize(JsonStream,dataHolder);
-				}
-			}
+			using (var stream = new StreamWriter(SavePath))
+				serializer.Serialize(stream, dataHolder);
 		}
 
 		public static CPerson GetPersonByID(uint ID) =>

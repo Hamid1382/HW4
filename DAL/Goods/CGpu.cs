@@ -18,7 +18,7 @@ namespace DAL.Goods
 		public static bool IsValidMaxResolution(SResolution maxResolution)
 		{
 			ulong pixel = maxResolution.Height * maxResolution.Width;
-			return pixel >= 480_000 && pixel <= 24_000_000;
+			return pixel >= 480_000 && pixel <= 240_000_000;
 		}
 		private uint _VRamSive;
 		public uint VRamSize //MB 
