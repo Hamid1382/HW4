@@ -9,15 +9,15 @@ namespace DAL.Goods
 {
 	public class CCpu : CMerchandise
 	{
-		public static bool IsValidCoreCount(ushort coreCount) => 
+		public static bool IsValidCoreCount(in ushort coreCount) => 
 			coreCount > 1 && coreCount <= 128;
-		public static bool IsValidThreadCount(ushort threadCount) => 
+		public static bool IsValidThreadCount(in ushort threadCount) => 
 			threadCount > 2 && threadCount <= 256;
-		public static bool IsValidFrequency(uint frequency) => 
+		public static bool IsValidFrequency(in uint frequency) => 
 			frequency >= 1000 && frequency <= 7000;
-		public static bool IsValidLithographic(ushort lithographic) =>
+		public static bool IsValidLithographic(in ushort lithographic) =>
 			lithographic >= 1 && lithographic <= 30;
-		public static bool IsValidTDP(ushort TDP) =>
+		public static bool IsValidTDP(in ushort TDP) =>
 			TDP >= 1 && TDP <= 300;
 
 		private ushort _CoreCount;
@@ -68,7 +68,7 @@ namespace DAL.Goods
 			set
 			{
 				if (IsValidLithographic(value))
-					_Frequency = value;
+					_Lithographic = value;
 				else
 					throw new ArgumentOutOfRangeException();
 			}

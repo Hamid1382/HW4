@@ -8,8 +8,8 @@ namespace DAL.Helper
 {
 	public enum EState
 	{
-		Visible,
 		Draft,
+		Visible,
 		Deleted
 	}
 }

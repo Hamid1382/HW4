@@ -105,8 +105,23 @@ namespace GUI.AddStuffPages
 			var count = uint.Parse(Count.Text);
 			if (Functionality == EFunc.add)
 			{
-				Logic.AddRam(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
-				(EState) this.State.SelectedIndex, (Eddr) DDRSupport.SelectedIndex, moduleCount, capacity, frequency);
+				//Logic.AddRam(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
+				//(EState) this.State.SelectedIndex, (Eddr) DDRSupport.SelectedIndex, moduleCount, capacity, frequency);
+				var ram = new CRam()
+				{
+					Name = Name.Text,
+					Description = Description.Text,
+					Price = price,
+					Discount = discount,
+					Manufacturer = Manufactor.Text,
+					Available = count,
+					State = (EState) State.SelectedIndex,
+					DdrVersion = (Eddr) DDRSupport.SelectedIndex,
+					ModuleCount = moduleCount,
+					Capacity = capacity,
+					Frequency = frequency,
+				};
+				Logic.AddStuff(ram);
 			}
 			else
 			{

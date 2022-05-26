@@ -31,7 +31,7 @@ namespace GUI
 				this.PathContainer.Text = DataStorage.SavePath;
 			}
 			sdf = new SaveFileDialog();
-			sdf.Filter = @"Json Files(*.Json)|*.json";
+			sdf.Filter = @"Hamid Shop Data Files(*.hsd)|*.hsd";
 		}
 
 		private void Save_Save_Click(object sender, RoutedEventArgs e)

@@ -26,7 +26,7 @@ namespace GUI
 		{
 			InitializeComponent();
 			ofd = new OpenFileDialog();
-			ofd.Filter = "Json File (*.json)|*.json";
+			ofd.Filter = "Hamid Shop Data Files(*.hsd)|*.hsd";
 		}
 
 		private void Browse_Load_Click(object sender, RoutedEventArgs e)

@@ -63,13 +63,13 @@ namespace GUI
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			bool isAllGood = true, a;
-			isAllGood &= reMatch(Price, @"^$[0-9]+$");
-			isAllGood &= reMatch(Discount, @"^$[0-9]+$");
-			isAllGood &= reMatch(Manufactor, @"^$[A-Za-z]+$");
-			isAllGood &= reMatch(Count, @"^$[0-9]+$");
-			isAllGood &= reMatch(VramSize, @"^$[0-9]+$");
-			isAllGood &= reMatch(MaxDisplayPossible, @"^$[0-9]+$");
-			isAllGood &= reMatch(MaxResolution, @"^$[0-9]+x[0-9]+$");
+			isAllGood &= reMatch(Price, @"^[0-9]+$");
+			isAllGood &= reMatch(Discount, @"^[0-9]+$");
+			isAllGood &= reMatch(Manufactor, @"^[A-Za-z]+$");
+			isAllGood &= reMatch(Count, @"^[0-9]+$");
+			isAllGood &= reMatch(VramSize, @"^[0-9]+$");
+			isAllGood &= reMatch(MaxDisplayPossible, @"^[0-9]+$");
+			isAllGood &= reMatch(MaxResolution, @"^([0-9]+)x([0-9]+)$");
 
 
 			if (!isAllGood)
@@ -110,8 +110,24 @@ namespace GUI
 			var count = uint.Parse(Count.Text);
 			if (this.functionality == EFunc.add)
 			{
-				Logic.AddGpu(this.Name.Text, this.Description.Text, price, discount, this.Manufactor.Text, count, (EState) this.State.SelectedIndex, vRamSize,
-				(ushort) PciVersion.SelectedIndex, maxDispalyPossible, resolution, this.Series.Text, (EGDDR) this.VramModule.SelectedIndex);
+				var gpu = new CGpu()
+				{
+					Name = this.Name.Text,
+					Description = this.Description.Text,
+					Price = price,
+					Discount = discount,
+					Manufacturer = this.Manufactor.Text,
+					Available = count,
+					State = (EState) this.State.SelectedIndex,
+					VRamSize = vRamSize,
+					PCIVersion = (ushort) PciVersion.SelectedIndex,
+					MaxDisplayPossible = maxDispalyPossible,
+					MaxResolution = resolution,
+					Series = this.Series.Text,
+					VRamModule = (EGDDR) this.VramModule.SelectedIndex
+				};
+				Logic.AddStuff(gpu);
+
 			}
 			else
 			{

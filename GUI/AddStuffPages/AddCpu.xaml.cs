@@ -99,7 +99,7 @@ namespace GUI
 			isAllGood &= a;
 
 			//Frequency
-			var frequency = ushort.Parse(Frequency.Text);
+			var frequency = uint.Parse(Frequency.Text);
 			a = CCpu.IsValidFrequency(frequency);
 			match(Frequency, a);
 			isAllGood &= a;
@@ -123,10 +123,26 @@ namespace GUI
 			if (!isAllGood)
 				return;
 			var count = uint.Parse(Count.Text);
-			if(this.Functionality == EFunc.add)
+			if(Functionality == EFunc.add)
 			{
-				Logic.AddCpu(Name.Text, Description.Text, price, discount, this.Manufactor.Text, count,
-					(EState) State.SelectedIndex, coreCount, threadCount, frequency, lithographic, tdp, (Eddr) this.DDRSupport.SelectedIndex, this.Series.Text);
+				CCpu cpu = new CCpu()
+				{
+					Name = Name.Text,
+					Description = Description.Text,
+					Price = price,
+					Discount = discount,
+					CoreCount = coreCount,
+					ThreadCount = threadCount,
+					Frequency = frequency,
+					Lithographic = lithographic,
+					Available = count,
+					Manufacturer = Manufactor.Text,
+					State = (EState) State.SelectedIndex,
+					DdrSupport = (Eddr) DDRSupport.SelectedIndex,
+					Series = Series.Text,
+					TDP = tdp,
+				};
+				Logic.AddStuff(cpu);
 			}
 			else
 			{
