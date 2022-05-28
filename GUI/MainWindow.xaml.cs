@@ -19,12 +19,62 @@ namespace GUI
 			InitializeComponent();
 			EssentialChecks();
 		}
-
 		public void EssentialChecks()
 		{
-			
+			if(DataStorage.dataHolder is null)
+			{
+				Save_Session.IsEnabled		= false;
+				Load_Session.IsEnabled		= true;
+				New_Session.IsEnabled		= true;
+				Reload_Session.IsEnabled	= false;
+				Sign_In.IsEnabled			= false;
+				Log_In.IsEnabled			= false;
+				Log_Out.IsEnabled			= false;
+				View_People.IsEnabled		= false;
+				Add_Goods.IsEnabled			= false;
+				Edit_Remove.IsEnabled		= false;
+			}
+			else
+			{
+				Save_Session.IsEnabled		= true;
+				Load_Session.IsEnabled		= true;
+				New_Session.IsEnabled		= true;
+				Reload_Session.IsEnabled	= true;
+				if(Logic.currentUser is null)
+				{
+					Sign_In.IsEnabled		= true;
+					Log_In.IsEnabled		= true;
+					Log_Out.IsEnabled		= false;
+					View_People.IsEnabled	= false;
+					Add_Goods.IsEnabled		= false;
+					Edit_Remove.IsEnabled	= false;
+				}
+				else
+				{
+					Sign_In.IsEnabled = false;
+					Log_In.IsEnabled = false;
+					Log_Out.IsEnabled = true;
+					switch (DataStorage.GetPersonByID(Logic.currentUser.Value).Role)
+					{
+						case ERole.mainAdmin:
+							View_People.IsEnabled	= true;
+							Add_Goods.IsEnabled		= true;
+							Edit_Remove.IsEnabled	= true;
+							break;
+						case ERole.Admin:
+							View_People.IsEnabled	= false;
+							Add_Goods.IsEnabled		= true;
+							Edit_Remove.IsEnabled	= true;
+							break;
+						case ERole.Costumer:
+							View_People.IsEnabled	= false;
+							Add_Goods.IsEnabled		= false;
+							Edit_Remove.IsEnabled	= false;
+							break;
+					}
+				}
+			}
 		}
-
 		public void AddGoodSafe()
 		{
 			if(DataStorage.dataHolder != null)
@@ -198,14 +248,10 @@ namespace GUI
 			(new Load()).ShowDialog();
 		private void New_Session_Click(object sender, RoutedEventArgs e)
 		{
-			MessageBoxResult result = MessageBox.Show("Do you really want to start a new session?",
-										  "Confirmation",
-										  MessageBoxButton.YesNo,
-										  MessageBoxImage.Question);
+			MessageBoxResult result = MessageBox.Show("Do you really want to start a new session?","Confirmation",
+										  MessageBoxButton.YesNo, MessageBoxImage.Question);
 			if (result == MessageBoxResult.Yes)
-			{
 				DataStorage.NewSession();
-			}
 		}
 		private void Reload_Session_Click(object sender, RoutedEventArgs e)
 		{
@@ -233,6 +279,7 @@ namespace GUI
 			{
 				Logic.currentUser = null;
 			}
+			EssentialChecks();
 		}
 		private void Add_Goods_click(object sender, RoutedEventArgs e) =>
 			(new AddStuff()).ShowDialog();
@@ -253,6 +300,11 @@ namespace GUI
 			ShowGpu.IsChecked = false;
 			ShowMotherboard.IsChecked = false;
 			ShowRam.IsChecked = false;
+		}
+
+		private void Window_Activated(object sender, EventArgs e)
+		{
+			EssentialChecks();
 		}
 	}
 }

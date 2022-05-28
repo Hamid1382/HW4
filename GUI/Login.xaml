@@ -11,14 +11,14 @@
 		<TextBox Name="username"/>
 		<Label Content="Password: "/>
 		<TextBox Name="password"/>
-		<Label Foreground="Red" Visibility="Hidden" Content="Username or password isn't correct!" Padding="25 5 25 5"/>
+		<Label Foreground="Red" Visibility="Hidden" Content="Username or password isn't correct!" Padding="25 5 25 5" Name="ErrorMessage"/>
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*"/>
 				<ColumnDefinition Width="8*"/>
 				<ColumnDefinition Width="1*"/>
 			</Grid.ColumnDefinitions>
-			<Button Content="Login!" Grid.Column="1"/>
+			<Button Content="Login!" Grid.Column="1" Name="LoginBtn" Click="Login_Click"/>
 		</Grid>
 		
 	</StackPanel>

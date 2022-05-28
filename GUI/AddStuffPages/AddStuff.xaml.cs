@@ -35,28 +35,28 @@ namespace GUI
 					{
 						Functionality = EFunc.add
 					};
-					a.Show();
+					a.ShowDialog();
 					break;
 				case 2:
 					var b = new AddGpu
 					{
 						functionality = EFunc.add
 					};
-					b.Show();
+					b.ShowDialog();
 					break;
 				case 3:
 					var c = new AddRam
 					{
 						Functionality = EFunc.add
 					};
-					c.Show();
+					c.ShowDialog();
 					break;
 				case 4:
 					var d = new AddMotherBoard
 					{
 						Functionality = EFunc.add
 					};
-					d.Show();
+					d.ShowDialog();
 					break;
 			}
 		}

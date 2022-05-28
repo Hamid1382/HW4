@@ -17,6 +17,7 @@ namespace BLL
 			uint id = DataStorage.GetNewPersonID();
 			DataStorage.AddPerson(new CPerson() { Id = id, Name = name, Username = username,
 				Password = Password,Role = (id ==0?ERole.mainAdmin:ERole.Costumer)});
+			currentUser = id;
 		}
 		public static void AddStuff(CMerchandise merchandise)
 		{
@@ -30,9 +31,17 @@ namespace BLL
 		public static SResolution GetSResolution(uint width, uint height) =>
 			new SResolution() { Height = height, Width = width };
 		public static void Logout() => currentUser = null;
-		public static bool IsRunning() => currentUser != null; //totally suggested by intelliSense.
-		public static bool Login(string name, string password) =>
-			DataStorage.dataHolder.People.Where<CPerson>(x => x.Username == name && x.Password == password).Any<CPerson>();
+		public static bool Login(string name, string password) {
+			var found = DataStorage.dataHolder.People.Where<CPerson>
+				(x => x.Username == name && x.Password == password);
+			if (found.Any<CPerson>())
+			{
+				currentUser = found.First<CPerson>().Id;
+			}
+			return found.Any<CPerson>();
+
+		}
+			
 
 		public static void SignIn(String name, string username, string password) => 
 			DataStorage.AddPerson(new CPerson()

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
 
 namespace GUI
 {
@@ -22,6 +23,20 @@ namespace GUI
 		public Login()
 		{
 			InitializeComponent();
+		}
+
+		private void Login_Click(object sender, RoutedEventArgs e)
+		{
+			var a = Logic.Login(username.Text, password.Text);
+			if (a)
+			{
+				this.ErrorMessage.Visibility = Visibility.Collapsed;
+				Close();
+			}
+			else
+			{
+				this.ErrorMessage.Visibility = Visibility.Visible;
+			}
 		}
 	}
 }
