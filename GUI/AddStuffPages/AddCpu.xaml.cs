@@ -26,9 +26,11 @@ namespace GUI
 	{
 		public uint? TargetID;
 		public EFunc Functionality;
-		public AddCpu()
+		public AddCpu(EFunc func , uint id)
 		{
 			InitializeComponent();
+			Functionality = func;
+			TargetID = id;
 			if(this.Functionality == EFunc.edit)
 			{
 				CCpu cpu = DataStorage.GetMerchandisenByID(TargetID.Value) as CCpu;
@@ -161,6 +163,7 @@ namespace GUI
 				cpu.Lithographic = lithographic;
 				cpu.DdrSupport = (Eddr) DDRSupport.SelectedIndex;
 				cpu.Series = Series.Text;
+				cpu.TDP = tdp;
 			}
 			Close();
 		}

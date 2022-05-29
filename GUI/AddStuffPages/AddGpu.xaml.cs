@@ -25,9 +25,11 @@ namespace GUI
 	{
 		public uint? TargetID;
 		public EFunc functionality;
-		public AddGpu()
+		public AddGpu(EFunc func,uint id)
 		{
 			InitializeComponent();
+			functionality = func;
+			TargetID = id;
 			if(this.functionality == EFunc.edit)
 			{
 				var gpu = DataStorage.GetMerchandisenByID(TargetID.Value) as CGpu;

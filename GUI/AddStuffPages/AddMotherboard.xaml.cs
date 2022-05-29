@@ -24,9 +24,11 @@ namespace GUI
 	{
 		public uint? TargetID;
 		public EFunc Functionality;
-		public AddMotherBoard()
+		public AddMotherBoard(EFunc functionality,uint id)
 		{
 			InitializeComponent();
+			TargetID = id;
+			Functionality = functionality;
 			if (this.Functionality == EFunc.edit)
 			{
 				var motherboard= DataStorage.GetMerchandisenByID(TargetID.Value) as CMotherboard;

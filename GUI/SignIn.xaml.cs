@@ -41,14 +41,17 @@ namespace GUI
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			bool isAllgood = true, a;
-			a = password.Text == cpassword.Text;
-			match(cpassword, a);
+			a = password.Password == cpassword.Password;
+			if (a)
+				cpassword.Foreground = Brushes.Black;
+			else
+				cpassword.Foreground = Brushes.Red;
 			isAllgood &= a;
 			a = reMatch(username, @"[0-9_A-z.]{5,16}");
 			isAllgood &= a;
 			if (!isAllgood)
 				return;
-			Logic.AddPerson(FullName.Text, username.Text, password.Text);
+			Logic.AddPerson(FullName.Text, username.Text, password.Password);
 			this.Close();
 		}
 	}

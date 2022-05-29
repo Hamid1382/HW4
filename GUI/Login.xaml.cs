@@ -27,7 +27,7 @@ namespace GUI
 
 		private void Login_Click(object sender, RoutedEventArgs e)
 		{
-			var a = Logic.Login(username.Text, password.Text);
+			var a = Logic.Login(username.Text, password.Password);
 			if (a)
 			{
 				this.ErrorMessage.Visibility = Visibility.Collapsed;

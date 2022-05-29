@@ -24,8 +24,9 @@ namespace GUI {
 	public partial class UCForEditStuffList : UserControl {
 		public uint id;
 		private CMerchandise t;
-		public UCForEditStuffList()
+		public UCForEditStuffList(uint Identifier)
 		{
+			id = Identifier;
 			InitializeComponent();
 			t = DataStorage.GetMerchandisenByID(id);
 			this.ID.Text = id.ToString();
@@ -38,35 +39,19 @@ namespace GUI {
 			switch (t)
 			{
 				case CCpu cpu:
-					var ViewCpu = new AddCpu()
-					{
-						Functionality = EFunc.edit,
-						TargetID = t.ID,
-					};
+					var ViewCpu = new AddCpu(EFunc.edit, id);
 					ViewCpu.ShowDialog();
 					break;
 				case CGpu gpu:
-					var ViewGpu = new AddGpu()
-					{
-						functionality = EFunc.edit,
-						TargetID = id,
-					};
+					var ViewGpu = new AddGpu(EFunc.edit, id);
 					ViewGpu.ShowDialog();
 					break;
 				case CRam ram:
-					var ViewRam = new AddRam()
-					{
-						Functionality = EFunc.edit,
-						TargetID = id,
-					};
+					var ViewRam = new AddRam(EFunc.edit, id);
 					ViewRam.ShowDialog();
 					break;
 				case CMotherboard motherboard:
-					var Viewmotherboard = new AddMotherBoard()
-					{
-						Functionality = EFunc.edit,
-						TargetID = id,
-					};
+					var Viewmotherboard = new AddMotherBoard(EFunc.edit, id);
 					Viewmotherboard.ShowDialog();
 					break;
 			}
@@ -75,6 +60,7 @@ namespace GUI {
 		private void Delete_Click(object sender, RoutedEventArgs e)
 		{
 			t.State = EState.Deleted;
+			this.Visibility = Visibility.Collapsed;
 		}
 	}
 }

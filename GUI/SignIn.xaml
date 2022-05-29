@@ -12,9 +12,9 @@
 		<Label Content="Username: "/>
 		<TextBox Name="username"/>
 		<Label Content="Password: "/>
-		<TextBox Name="password"/>
+		<PasswordBox Name="password"/>
 		<Label Content="Confirm Passwoed"/>
-		<TextBox Name="cpassword"/>
+		<PasswordBox Name="cpassword"/>
 		<Label Foreground="Red" Visibility="Hidden" Content="Error!" Padding="25 5 25 5"/>
 		<Grid>
 			<Grid.ColumnDefinitions>

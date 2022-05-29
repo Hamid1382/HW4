@@ -21,9 +21,12 @@ namespace GUI {
 		public EditStuff()
 		{
 			InitializeComponent();
-			foreach(var merchandise in DataStorage.dataHolder.Goods)
+			for(int i = 0; i < DataStorage.dataHolder.Goods.Count;i++)
 			{
-				GoodsList.Items.Add(new UCForEditStuffList() { id = merchandise.ID });
+				if (DataStorage.dataHolder.Goods[i].State == DAL.Helper.EState.Deleted)
+					continue;
+				var a = new UCForEditStuffList(DataStorage.dataHolder.Goods[i].ID);
+				GoodsList.Items.Add(a);
 			}
 		}
 	}

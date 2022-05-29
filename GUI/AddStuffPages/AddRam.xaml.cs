@@ -27,9 +27,11 @@ namespace GUI.AddStuffPages
 
 		public uint? TargetID;
 		public EFunc Functionality;
-		public AddRam()
+		public AddRam(EFunc func,uint id)
 		{
 			InitializeComponent();
+			Functionality = func;
+			TargetID = id;
 			if (this.Functionality == EFunc.edit)
 			{
 				var ram = DataStorage.GetMerchandisenByID(TargetID.Value) as CRam;
