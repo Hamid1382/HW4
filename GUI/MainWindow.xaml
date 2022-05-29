@@ -33,7 +33,7 @@
 			</MenuItem>
 			<MenuItem Header="Goods">
 				<MenuItem Header="Add" Click="Add_Goods_click" Name="Add_Goods"/>
-				<MenuItem Header="Edit or remove" Name="Edit_Remove"/>
+				<MenuItem Header="Edit or remove" Name="Edit_Remove" Click="Edit_Remove_Click"/>
 			</MenuItem>
 		</Menu>
 		<TextBlock Text="Guess,   Sign in/login for more stuff!" Grid.Row="1" Padding="0 3 0 0" Grid.ColumnSpan="2"/>

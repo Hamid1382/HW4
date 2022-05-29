@@ -71,6 +71,9 @@
     <Compile Include="AddStuffPages\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditStuff.xaml.cs">
+      <DependentUpon>EditStuff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EState.cs" />
     <Compile Include="Save.xaml.cs">
       <DependentUpon>Save.xaml</DependentUpon>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddStuffPages\AddStuff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditStuff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

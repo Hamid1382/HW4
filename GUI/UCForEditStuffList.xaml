@@ -18,15 +18,15 @@
 			<ColumnDefinition MaxWidth="7"/>
 			<ColumnDefinition Width="3.5*"/>
 		</Grid.ColumnDefinitions>
-		<TextBlock Name="ID" Text="0010" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="0"/>
+		<TextBlock Name="ID" Text="" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="0"/>
 		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Grid.Column="1"/>
-		<TextBlock Name="Name" Text="Intel Core-i7 2022" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" FontWeight="SemiBold" Grid.Column="2"/>
+		<TextBlock Name="Name" Text="" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" FontWeight="SemiBold" Grid.Column="2"/>
 		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Grid.Column="3" />
-		<TextBlock Name="Added" Text="2022/15/8 10:20:11 UC" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="4"/>
+		<TextBlock Name="Added" Text="" TextAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="4"/>
 		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"  Grid.Column="5"/>
-		<Button Name="Edit" Content="Edit" Padding="15 0" Margin="10 5" Grid.Column="6"/>
+		<Button Name="Edit" Content="Edit" Padding="15 0" Margin="10 5" Grid.Column="6" Click="Edit_Click"/>
 		<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"  Grid.Column="7"/>
-		<Button Name="Delete" Content="Delete" Padding="15 0" Margin="10 5" Foreground="Red" Grid.Column="8" FontWeight="Light"/>
+		<Button Name="Delete" Content="Delete" Padding="15 0" Margin="10 5" Foreground="Red" Grid.Column="8" FontWeight="Light" Click="Delete_Click"/>
 
 	</Grid>
 </UserControl>

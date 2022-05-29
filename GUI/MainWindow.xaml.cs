@@ -306,5 +306,10 @@ namespace GUI
 		{
 			EssentialChecks();
 		}
+
+		private void Edit_Remove_Click(object sender, RoutedEventArgs e)
+		{
+			(new EditStuff()).ShowDialog();
+		}
 	}
 }
